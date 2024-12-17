@@ -81,7 +81,7 @@ test:
 .PHONY: image
 image:
 	@echo "Building multiarch docker images and manifest"
-	docker-buildx build --platform=linux/amd64,linux/arm64 --progress=plain \
+	docker buildx build --platform=linux/amd64,linux/arm64 --progress=plain \
 		--provenance=false -t $(IMAGE) .
 
 .PHONY: push

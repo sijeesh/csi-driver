@@ -2,4 +2,4 @@
 name=AlmaLinux-$releasever - Base
 baseurl=https://repo.almalinux.org/almalinux/$releasever/BaseOS/$basearch/os/
 gpgcheck=0
-enabled=1
+enabled=0
