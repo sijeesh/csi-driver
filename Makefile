@@ -3,7 +3,7 @@ ifndef REPO_NAME
 	REPO_NAME ?= hpestorage/csi-driver
 endif
 
-TAG = edge
+TAG = 2.5.1-beta
 
 ARCH ?= amd64
 
@@ -87,5 +87,5 @@ image:
 .PHONY: push
 push:
 	@echo "Publishing $(IMAGE)"
-	docker-buildx build --platform=linux/amd64,linux/arm64 --progress=plain \
+	docker buildx build --platform=linux/amd64,linux/arm64 --progress=plain \
 		--provenance=false --push -t $(IMAGE) .

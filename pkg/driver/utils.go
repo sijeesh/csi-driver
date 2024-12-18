@@ -34,30 +34,30 @@ func ParseEndpoint(ep string) (string, string, error) {
 }
 
 // NewControllerServiceCapability wraps the given type into a proper capability as expected by the spec
-func NewControllerServiceCapability(cap csi.ControllerServiceCapability_RPC_Type) *csi.ControllerServiceCapability {
+func NewControllerServiceCapability(capab csi.ControllerServiceCapability_RPC_Type) *csi.ControllerServiceCapability {
 	return &csi.ControllerServiceCapability{
 		Type: &csi.ControllerServiceCapability_Rpc{
 			Rpc: &csi.ControllerServiceCapability_RPC{
-				Type: cap,
+				Type: capab,
 			},
 		},
 	}
 }
 
 // NewNodeServiceCapability wraps the given type into a property capability as expected by the spec
-func NewNodeServiceCapability(cap csi.NodeServiceCapability_RPC_Type) *csi.NodeServiceCapability {
+func NewNodeServiceCapability(capab csi.NodeServiceCapability_RPC_Type) *csi.NodeServiceCapability {
 	return &csi.NodeServiceCapability{
 		Type: &csi.NodeServiceCapability_Rpc{
 			Rpc: &csi.NodeServiceCapability_RPC{
-				Type: cap,
+				Type: capab,
 			},
 		},
 	}
 }
 
 // NewPluginCapabilityVolumeExpansion wraps the given volume expansion into a plugin capability volume expansion required by the spec
-func NewPluginCapabilityVolumeExpansion(cap csi.PluginCapability_VolumeExpansion_Type) *csi.PluginCapability_VolumeExpansion {
-	return &csi.PluginCapability_VolumeExpansion{Type: cap}
+func NewPluginCapabilityVolumeExpansion(capab csi.PluginCapability_VolumeExpansion_Type) *csi.PluginCapability_VolumeExpansion {
+	return &csi.PluginCapability_VolumeExpansion{Type: capab}
 }
 
 // NewVolumeCapabilityAccessMode wraps the given access mode into a volume capability access mode required by the spec
